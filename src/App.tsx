@@ -8,7 +8,14 @@ function App() {
     useGetPokemonByNameQuery('bulbasaur');
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        margin: '100px 16px 0 16px',
+        padding: '16px',
+        border: '1px solid black',
+      }}
+    >
       {isFetching ? (
         <>Loading...</>
       ) : error ? (
@@ -19,7 +26,7 @@ function App() {
           <img src={data.sprites.front_shiny} alt={data.species.name} />
         </>
       ) : null}
-      <div>
+      <div style={{ marginTop: '32px' }}>
         <Button variant="outlined" onClick={refetch}>
           refetch
         </Button>

@@ -2,7 +2,7 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import counterReducer from '../features/counter/counterSlice';
 import snackbarReducer from '../features/snackbar/snackbarSlice';
-import { rtkQueryErrorLogger } from './middlewares/rtkQueryErrorLogger';
+import { rtkQueryErrorHandler } from './middlewares/rtkQueryErrorHandler';
 import { pokemonApi } from './services/pokemon';
 
 export const store = configureStore({
@@ -12,7 +12,7 @@ export const store = configureStore({
     [pokemonApi.reducerPath]: pokemonApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pokemonApi.middleware, rtkQueryErrorLogger),
+    getDefaultMiddleware().concat(pokemonApi.middleware, rtkQueryErrorHandler),
 });
 
 setupListeners(store.dispatch);

@@ -11,7 +11,7 @@ const SnackbarProvider: FC<{ children: ReactNode }> = ({ children }) => {
     <>
       {children}
       <Snackbar
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={isSnackbarOpen}
         message={snackbarMessage}
       />

@@ -3,14 +3,10 @@ import { pokemon } from './data/pokemon';
 
 const getRandomStatus = () => {
   const random = Math.random();
-  if (random < 0.2) {
+  if (random < 0.33) {
     return 500;
-  } else if (random < 0.4) {
+  } else if (random < 0.66) {
     return 403;
-  } else if (random < 0.6) {
-    return 401;
-  } else if (random < 0.8) {
-    return 400;
   } else {
     return 200;
   }

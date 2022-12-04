@@ -8,7 +8,7 @@ import {
 /**
  * Log a warning and show a toast!
  */
-export const rtkQueryErrorLogger: Middleware =
+export const rtkQueryErrorHandler: Middleware =
   (api: MiddlewareAPI) => (next) => (action) => {
     if (isRejectedWithValue(action)) {
       const status = action.payload.status;
